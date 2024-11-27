@@ -13,11 +13,12 @@ class Cadastro_livro:
 
 
 class Usuario:
-    def __init__(self, nome_livro, numero_livro, status):
+    def __init__(self, nome_usuario, idade, numero_livro, status):
         super.__init__(self, status)
-        self._livro = nome_livro
+        self.nome_usuario = nome_usuario
         self._numero_livro = numero_livro
         self.status = status
+        self.idade = idade
 
     def emprestar_livro(self):
         if self.status():
@@ -33,6 +34,10 @@ class Usuario:
         else:
             return f"Livro {self._livro} não foi devolvido"
 
+class Admim:
+    def __init__(self, nome_admim, idade):
+        super.__init__(self, nome_admim, idade)
+        
 
 class Biblioteca:
      def __init__(self, status, nome_livro):
@@ -47,3 +52,16 @@ class Biblioteca:
         for livro in self.nome_livro:
             livro = "Disponível" if self.status() else "Emprestado"
             print(f"O livro {self.nome_livro} está {self.status}")
+
+
+livro1 = Cadastro_livro("Pqueno principe", "Dôdo Pressão", "Disponivel")
+livro1 = Cadastro_livro("grande principe", "Duda Olanda", "Disponivel")
+
+
+aluno1 = Usuario("Carlos", "25", "251",)
+admim1 = Admim("Sérgio", "45")
+
+Biblioteca.listar_livros()
+
+Usuario.emprestar_livro()
+Usuario.devolver_livro()
